@@ -17,7 +17,7 @@ import com.google.firebase.firestore.Query;
 
 
 public class AvailableFragment extends Fragment{
-
+    User_ItemAdapter adapter;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -26,7 +26,7 @@ public class AvailableFragment extends Fragment{
         FirebaseFirestore db=FirebaseFirestore.getInstance();
         CollectionReference notebookRef=db.collection("Notebook");
 
-        ItemAdapter adapter;
+
 
         Query query = notebookRef.orderBy("count", Query.Direction.DESCENDING);
 
@@ -34,12 +34,21 @@ public class AvailableFragment extends Fragment{
                 .setQuery(query, Itemshow.class)
                 .build();
 
-        adapter= new ItemAdapter(options);
+        adapter= new User_ItemAdapter(options);
         RecyclerView recyclerViewu = rootView.findViewById(R.id.Recyviewu);
 //        recyclerViewu.findViewById((R.id.Recyviewu));
         recyclerViewu.setHasFixedSize(true);
         recyclerViewu.setAdapter(adapter);
         recyclerViewu.setLayoutManager(new LinearLayoutManager(getActivity()));
         return rootView;
+    }
+    public void onStart() {
+        super.onStart();
+        adapter.startListening();
+    }
+
+    public void onStop() {
+        super.onStop();
+        adapter.stopListening();
     }
 }
