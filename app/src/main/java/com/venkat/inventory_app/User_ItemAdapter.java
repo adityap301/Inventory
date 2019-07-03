@@ -31,8 +31,8 @@ public class User_ItemAdapter extends FirestoreRecyclerAdapter<Itemshow, User_It
 
     @Override
     protected void onBindViewHolder(@NonNull UserItemHolder holder, int position, @NonNull Itemshow model) {
-        holder.textViewItemname.setText(model.getItem_name());
-        holder.textViewcount.setText(String.valueOf(model.getCount()));
+        holder.textViewItemName.setText(model.getItem_name());
+        holder.textViewCount.setText(String.valueOf(model.getCount()));
 
     }
 
@@ -59,14 +59,14 @@ public class User_ItemAdapter extends FirestoreRecyclerAdapter<Itemshow, User_It
     class UserItemHolder extends RecyclerView.ViewHolder{
 
         CardView rv_layout;
-        TextView textViewItemname;
-        TextView textViewcount;
+        TextView textViewItemName;
+        TextView textViewCount;
 
         public UserItemHolder(@NonNull View itemView) {
             super(itemView);
             rv_layout=itemView.findViewById(R.id.rv_user_item_layout);
-            textViewItemname=itemView.findViewById(R.id.item_nameu);
-            textViewcount=itemView.findViewById(R.id.countu);
+            textViewItemName=itemView.findViewById(R.id.item_nameu);
+            textViewCount=itemView.findViewById(R.id.countu);
         }
     }
 }

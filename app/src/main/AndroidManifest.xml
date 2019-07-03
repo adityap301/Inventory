@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainUSER"></activity>
+        <activity
+            android:name=".MainUser"
+            android:label="@string/title_activity_main_user"></activity>
+        <activity android:name=".MainUSER" />
         <activity android:name=".Not_needed.Add_item" />
         <activity android:name=".MainADM" />
         <activity android:name=".MainActivity">

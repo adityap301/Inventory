@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Inventory_App</string>
+    <string name="title_activity_main_user">MainUser</string>
+    <string name="title_available">Available</string>
+    <string name="title_borrowed">Borrowed</string>
+    <string name="title_logs">Logs</string>
 </resources>
